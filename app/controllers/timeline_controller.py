@@ -10,6 +10,6 @@ def create_timeline_blueprint(di: AppDI):
 
     @timeline_blueprint.route('/get_numbers', methods=['GET'])
     def get_numbers():
-        return Response(stream_with_context(timeline_service.stream_numbers()()), content_type='text/event-stream')
+        return Response(stream_with_context(timeline_service.stream_numbers()), content_type='text/event-stream')
 
     return timeline_blueprint
