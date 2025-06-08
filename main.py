@@ -1,3 +1,4 @@
+from app.controllers.pages_controller import create_page_blueprint
 from config.helpers import configure_di
 from flask import Flask
 from app.controllers.timeline_controller import create_timeline_blueprint
@@ -10,7 +11,7 @@ def create_app():
 
     timeline_bp = create_timeline_blueprint(di)
     app.register_blueprint(timeline_bp, url_prefix="/timeline")
-    
+    app.register_blueprint(create_page_blueprint(di), url_prefix="/")
     return app
 
 def main():
