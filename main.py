@@ -11,7 +11,8 @@ def create_app():
 
     timeline_bp = create_timeline_blueprint(di)
     app.register_blueprint(timeline_bp, url_prefix="/timeline")
-    app.register_blueprint(create_page_blueprint(di), url_prefix="/")
+    # Commented blueprint of the page template, used in previous debbuging attempts
+    # app.register_blueprint(create_page_blueprint(di), url_prefix="/")
     return app
 
 def main():
